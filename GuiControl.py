@@ -10,7 +10,7 @@ from tkinter import *
 from main import get_response, bot_name, errorString
 import time 
 from google_api import translate_from
-
+from api_2 import get_wiki
 BG_GREY = "#ABB2B9"
 BG_COLOR = "#17202A"
 TEXT_COLOR = "#EAECEE"
@@ -88,7 +88,7 @@ class ChatApplication:
 
         if not msg:
             self.msg_entry.delete(0, END) #end constant from tkinter
-            msg1 = "Thera-bot: Enter 1 followed by your message for translation,\n2 followed by your message for definition,\nor type anything for therapy"
+            msg1 = "Thera-bot: Enter 1 followed by your message for translation,\n2 followed by your message for definition,type anything for therapy\n\n"
             self.text_widget.configure(state=NORMAL)
             self.text_widget.insert(END, msg1)
             self.text_widget.configure(state=DISABLED)
@@ -104,9 +104,11 @@ class ChatApplication:
             self.text_widget.configure(state=DISABLED)
 
             return
+
         if (msg[0] == "2"): 
             self.msg_entry.delete(0, END) #end constant from tkinter
-            msg1 = " this is option 2 \n\n"
+            summary = get_wiki(msg[2:])
+            msg1 = f"{msg[2:]} definition:\n {summary} \n\n"
             self.text_widget.configure(state=NORMAL)
             self.text_widget.insert(END, msg1)
             self.text_widget.configure(state=DISABLED)
