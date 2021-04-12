@@ -46,7 +46,8 @@ Each unittest uses assert statements to verify if the output obtained is the one
 
 
 ### Features in this Assignment
-* Synonym Recognition (10 points) (see above for explanation)
-* Machine Learning (10 points) (see above for explanation)
-* Graphical User Interface (5 points) (see above for explanation)
+* Google translate API (10 points)
+* Wikipedia API (10 points) (see above for explanation)
+
+
 
