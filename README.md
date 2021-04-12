@@ -14,3 +14,6 @@ The Software Development Lifecycle that we chose is the agile method. This model
 ## Installation and Setup 
 
 In order to run the chat bot the user must install the following libraries nltk, numpy, tflearn,random, json, pickle, tkinter. 
+
+
+this is the new readme
