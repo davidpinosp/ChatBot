@@ -8,6 +8,8 @@ Created on Tue Mar  2 09:56:31 2021
 
 from tkinter import *
 from main import get_response, bot_name, errorString
+import time 
+from google_api import translate_from
 
 BG_GREY = "#ABB2B9"
 BG_COLOR = "#17202A"
@@ -23,7 +25,8 @@ class ChatApplication:
     def __init__(self):
         self.window = Tk()
         self._setup_main_window()
-        
+        self.translate = 0
+        self.statement = " Enter 1 for translation, Enter 2 for definition"
     #how we start the application
     def run(self):
         self.window.mainloop()
@@ -65,15 +68,51 @@ class ChatApplication:
         send_button = Button(bottom_label, text="Send", font=FONT_BOLD, width=20, bg=BG_GREY, command=lambda: self._on_enter_pressed(None))
         send_button.place(relx=0.77, rely=0.008, relheight=0.06, relwidth=0.22)
         
+
+        
      # user clicks enter and message is sent    
+     # here is where I add the logiv 
+
+    
+    
+    
     def _on_enter_pressed(self,event):
+       
         msg = self.msg_entry.get()
         self._insert_message(msg, "You")
+        # if message == 1 translate 
             
+        
      #  displays response and assigns displays the nameof the sender
     def _insert_message(self, msg, sender):
+
         if not msg:
+            self.msg_entry.delete(0, END) #end constant from tkinter
+            msg1 = "Thera-bot: Enter 1 followed by your message for translation,\n2 followed by your message for definition,\nor type anything for therapy"
+            self.text_widget.configure(state=NORMAL)
+            self.text_widget.insert(END, msg1)
+            self.text_widget.configure(state=DISABLED)
             return 
+
+        if (msg[0]== "1"):
+            self.msg_entry.delete(0, END) #end constant from tkinter
+            # perform trasnlation 
+            translated  = translate_from('es',msg[2:])
+            msg1 = f"{msg[2:]} in english:  {translated} \n\n"
+            self.text_widget.configure(state=NORMAL)
+            self.text_widget.insert(END, msg1)
+            self.text_widget.configure(state=DISABLED)
+
+            return
+        if (msg[0] == "2"): 
+            self.msg_entry.delete(0, END) #end constant from tkinter
+            msg1 = " this is option 2 \n\n"
+            self.text_widget.configure(state=NORMAL)
+            self.text_widget.insert(END, msg1)
+            self.text_widget.configure(state=DISABLED)
+            return
+
+        
         
         self.msg_entry.delete(0, END) #end constant from tkinter
         msg1 = f"{sender}: {msg}\n\n"
@@ -88,6 +127,13 @@ class ChatApplication:
         
         self.text_widget.see(END)#so we are always able to see the last message
         
+
+
+
 if __name__ == "__main__":
+
+
+
     app = ChatApplication()
     app.run()
+

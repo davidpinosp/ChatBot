@@ -27,7 +27,7 @@ def bag_of_words(s, words):
 def chat():
 	print("Start talking with the bot (type quit to exit)!")
 	while True:
-		inp = input("You: ")
+		inp = input("You: 2")
 		if inp.lower() == "quit":
 			break
 
