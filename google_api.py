@@ -14,8 +14,3 @@ def translate_from(language,msg):
 
 
 
-
-string  =  "1 asfasdad"
-
-print(string[2:])
-

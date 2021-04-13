@@ -20,11 +20,7 @@ Machine Learning was used to train a model which can recognize certain patterns 
 
 The model is traind with TensorFlow's Natural Language Toolkit. Source: https://www.youtube.com/playlist?list=PLzMcBGfZo4-ndH9FoC4YWHGXG5RZekt-Q
 
-![Screenshot](mlExample.PNG)
 
-
-
-![Screenshot](synonymExample.png)
 
 ## Graphical User Interface
 The GUI is created from the python GUI toolkit called Tkinter. The interface is divided into 3 simple areas. First it the text widget, this is where the conversation is displayed. It is vertically scrollable allowing the user to see the conversation history. The second part is the message entry box. This is where the user enters their messages. Finally we have an enter button for the user to click to submit their message. The user can also simply press the enter key instead. The color pallete was designed to have a calming effext. The GUI makes calls to the main.py program to generated responses. It improves the overall system by providing ease of use and a relaxing aesthetic. 
@@ -37,7 +33,7 @@ Source: https://docs.python.org/3/library/tkinter.html
 * Wikipedia API (10 points) 
 
 
-## Google Tranlsate API 
+## Google Translate API 
 Using this API I added functionality to the thera-bot.This API was added to address any needs for international users. With the google translate API we access googles trained translation model. Therefore, the user can enter a word or phrase they wish to translate and it will be converted into the languages set in the program. In this case I set the default to spanish, but this can be easily changed in the GuiControl.py file. I implemented this into the chatbot, so that a user can enter 1 followed by the phrase they wish to translate, and the google translate api will return the input converted into english so that the user can be sure they are saying what they meant. 
 
 
@@ -45,3 +41,8 @@ Using this API I added functionality to the thera-bot.This API was added to addr
 ## Wikipedia API
 
 Using Wikipedias API I added a functionality that allows the user to get a brief summary of any topic of their interest. For example if the user wants to learn about Emotional Depression, they can type 2 followed by the topic of interest, and the Wikipedia API will return 3 sentences that summarize this topic. This way a user can understerstand and explore a plethora of topics in order to improve their experience with the thera-bot. 
+
+
+link to demo: https://youtu.be/QCAPGLgef1Y
+
+
